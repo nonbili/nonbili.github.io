@@ -1,0 +1,52 @@
+---
+import '../styles/global.css'
+
+const projects = [
+  {
+    icon: '/inks.png',
+    title: 'Inks',
+    description: 'Follow any websites, convert SNS to RSS',
+    url: 'https://inks.page',
+  },
+  {
+    icon: '/noutube.png',
+    title: 'NouTube',
+    description: 'YouTube and YouTube Music in a single app. No ads',
+    url: 'https://github.com/nonbili/NouTube',
+  },
+  {
+    icon: '/nora.png',
+    title: 'Nora',
+    description: 'Facebook, Instagram, Reddit, Threads and X in a single app. No ads',
+    url: 'https://github.com/nonbili/Nora',
+  },
+]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <title>Nonbili</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="project-list" aria-label="Nonbili projects">
+        {
+          projects.map((project) => (
+            <a class="project-card" href={project.url} target="_blank" rel="noreferrer">
+              <img class="project-icon" src={project.icon} alt="" width="100" height="100" loading="eager" />
+              <div>
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+              </div>
+            </a>
+          ))
+        }
+      </main>
+    </div>
+    <footer>© Nonbili Inc.</footer>
+  </body>
+</html>
